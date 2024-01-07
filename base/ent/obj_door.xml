@@ -1,0 +1,20 @@
+<entity name="obj_door">
+    <controller src="entities/door" />
+    <mesh src="obj/doors/door">
+        <material src="door_wood" />
+        <scale value="1.0" />
+
+        <animations entry="idle">
+            <clip name="idle" loop="true" start="1" end="1">
+            </clip>
+            <clip name="open" start="2" end="10">
+                <trigger frame="3" script="door_open_start" />
+                <trigger frame="10" script="door_open_end" />
+            </clip>
+            <clip name="close" start="11" end="20">
+                <trigger frame="12" script="door_close_start" />
+                <trigger frame="20" script="door_close_end" />
+            </clip>
+        </animations>
+    </mesh>
+</entity>

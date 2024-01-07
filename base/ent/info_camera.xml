@@ -1,0 +1,3 @@
+<entity name="info_camera">
+    <camera type="perspective" fov="60"></camera>
+</entity>

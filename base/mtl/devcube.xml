@@ -1,0 +1,6 @@
+<material>
+    <shader type="LightmappedGeneric">
+        <texture type="base" src="obj/devcube/color.tga" />
+        <surface type="metal" />
+    </shader>
+</material>

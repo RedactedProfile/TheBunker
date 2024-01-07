@@ -1,0 +1,7 @@
+<entity name="obj_devcube">
+    <controller src="entities/devcube" />
+    <mesh src="obj/cube/cube">
+        <material src="devcube" />
+        <scale value="1.0" />
+    </mesh>
+</entity>
