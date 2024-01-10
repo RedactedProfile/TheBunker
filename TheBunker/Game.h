@@ -6,6 +6,8 @@
 
 #include "DeviceResources.h"
 #include "StepTimer.h"
+#include <rapidxml/rapidxml.hpp>
+#include <rapidjson/rapidjson.h>
 
 
 // A basic game implementation that creates a D3D11 device and

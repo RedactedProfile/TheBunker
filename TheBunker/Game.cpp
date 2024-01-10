@@ -4,6 +4,9 @@
 
 #include "pch.h"
 #include "Game.h"
+#include <fstream>
+#include <iostream>
+#include <vector>
 
 extern void ExitGame() noexcept;
 
@@ -33,10 +36,34 @@ void Game::Initialize(HWND window, int width, int height)
 
     // TODO: Change the timer settings if you want something other than the default variable timestep mode.
     // e.g. for 60 FPS fixed timestep update logic, call:
-    /*
     m_timer.SetFixedTimeStep(true);
     m_timer.SetTargetElapsedSeconds(1.0 / 60);
+
+
+
+
+    /**
+    * This is where im going to start stubbing out some load stuff to move to classes later
     */
+
+
+    // let's load an obj
+
+    std::ifstream file("../base/TestAssets/suz/suz.glb", std::ios::binary);
+    if (!file) {
+        std::cerr << "Error opening file" << std::endl;
+        return; 
+    }
+
+    const size_t size = file.tellg();
+    const size_t header_size = 12;
+    std::vector<char> header(header_size);
+    if (!file.read(header.data(), header_size)) {
+        std::cerr << "Error reading header data" << std::endl;
+        return;
+    }
+
+    std::cout << "Whoa " << std::endl;
 }
 
 #pragma region Frame Update
@@ -58,6 +85,13 @@ void Game::Update(DX::StepTimer const& timer)
 
     // TODO: Add your game logic here.
     elapsedTime;
+
+
+    /**
+    * This is where im going to start stubbing out some update stuff to move to classes later
+    */
+
+
 }
 #pragma endregion
 
@@ -156,8 +190,8 @@ void Game::OnWindowSizeChanged(int width, int height)
 void Game::GetDefaultSize(int& width, int& height) const noexcept
 {
     // TODO: Change to desired default window size (note minimum size is 320x200).
-    width = 800;
-    height = 600;
+    width = 1280;
+    height = 720;
 }
 #pragma endregion
 
